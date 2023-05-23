@@ -1,0 +1,67 @@
+    {
+        "_id": "c-05",
+        "_parentId": "b-05",
+        "_type": "component",
+        "_component": "fileInput",
+        "_classes": "",
+        "_layout": "left",
+        "title": "File Input",
+        "displayTitle": "File Input",
+        "body": "Submit your assignment for grading.",
+        "instruction": "Upload your assignment. Review it. Once you think it's ready, press submit to get your grade",
+        "_attempts": 1,
+        "_shouldDisplayAttempts": false,
+        "_isRandom": false,
+        "_hasItemScoring": false,
+        "_questionWeight": 1,
+        "_selectable": 1,
+        "_canShowModelAnswer": true,
+        "_canShowFeedback": true,
+        "_canShowMarking": true,
+        "_recordInteraction": true,
+        "_items": [
+            {
+                "_shouldBeSelected": true
+            }
+        ],
+        "_feedback":{
+            "title": "Feedback",
+            "correct": "Congratulations, this is the correct feedback.",
+            "_incorrect": {
+                "notFinal": "",
+                "final": "This feedback will appear if you answered the question incorrectly."
+            },
+            "_partlyCorrect": {
+                "notFinal": "",
+                "final": "This feedback will appear if you answered the question correctly."
+            }
+        },
+        "_comment": "You only need to include _buttons if you want to override the button labels that are set in course.json",
+        "_buttons": {
+            "_submit": {
+                "buttonText": "Submit",
+                "ariaLabel": "Select here to submit your answer."
+            },
+            "_reset": {
+                "buttonText": "Reset",
+                "ariaLabel": ""
+            },
+            "_showCorrectAnswer": {
+                "buttonText": "Correct Answer",
+                "ariaLabel": ""
+            },
+            "_hideCorrectAnswer": {
+                "buttonText": "My Answer",
+                "ariaLabel": ""
+            },
+            "_showFeedback": {
+                "buttonText": "Show feedback",
+                "ariaLabel": ""
+            },
+            "remainingAttemptsText": "attempts remaining",
+            "remainingAttemptText": "final attempt"
+        },
+        "_pageLevelProgress": {
+            "_isEnabled": true
+        }
+    }

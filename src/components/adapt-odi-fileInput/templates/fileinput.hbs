@@ -1,0 +1,25 @@
+<div class="component__inner fileInput__inner" role="{{#if _isRadio}}radiogroup{{else}}group{{/if}}" {{#any displayTitle body instruction}}aria-labelledby="{{_id}}-header"{{/any}}>
+
+  {{> component this}}
+
+  <div class="component__widget fileInput__widget{{#unless _isEnabled}} is-disabled{{#if _isInteractionComplete}} is-complete is-submitted show-user-answer{{#if _isCorrect}} is-correct{{/if}}{{/if}}{{/unless}}">
+
+    {{#each _items}}
+    <div class="fileInput__item js-fileInput-item item-{{@index}}{{#unless ../_isEnabled}}{{#if ../_canShowMarking}}{{#if _isCorrect}} is-correct{{else}} is-incorrect{{/if}}{{/if}}{{/unless}}">
+      <input class="fileInput__item-input js-item-input btn-text" type="file" id="{{../_id}}-{{@index}}-input" {{#if ../_isRadio}}name="{{../_id}}-item" {{/if}} type="file"{{#unless ../_isEnabled}} disabled{{/unless}} aria-label="{{{a11y_normalize text}}}" data-adapt-index="{{_index}}" />
+        <div class="fileInput__item-text">
+          <div class="fileInput__item-text-inner">
+            {{{text}}}
+          </div>
+        </div>
+
+    </div>
+    {{/each}}
+
+  </div>
+    <div id="feedback"></div>
+    {{!-- <div id="table"></div> --}}
+    <table id="example" class="display" width="100%"></table>
+  <div class="btn__container"></div>
+
+</div>

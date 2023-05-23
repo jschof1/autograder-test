@@ -1,0 +1,71 @@
+.narrative {
+  &__content-title {
+    margin-bottom: @item-title-margin;
+    .item-title;
+  }
+
+  &__content-body a {
+    .link-text;
+  }
+
+  &__controls {
+    background-color: @item-color;
+    color: @item-color-inverted;
+
+    .no-touch &:not(.is-disabled):not(.is-locked):hover {
+      background-color: @item-color-hover;
+      color: @item-color-inverted-hover;
+      .transition(background-color @duration ease-in, color @duration ease-in;);
+    }
+  }
+
+  &__progress {
+    background-color: @item-color;
+    border-radius: 50%;
+
+    .no-touch &:not(.is-selected):hover {
+      background-color: @item-color-hover;
+      .transition(background-color @duration ease-in);
+    }
+  }
+
+  &__progress.is-visited {
+    background-color: @visited;
+  }
+
+  &__progress.is-selected {
+    background-color: @item-color-selected;
+  }
+
+  &__strapline-btn {
+    text-align: left;
+    background-color: @item-color;
+    color: @item-color-inverted;
+
+    .dir-rtl & {
+      text-align: right;
+    }
+  }
+
+  &__strapline-icon {
+    background-color: @item-color;
+    color: @item-color-inverted;
+  }
+
+  .no-touch &__strapline-btn:not(.is-disabled):not(.is-locked):hover,
+  .no-touch &__strapline-btn:not(.is-disabled):not(.is-locked):hover &__strapline-icon {
+    background-color: @item-color-hover;
+    color: @item-color-inverted-hover;
+    .transition(background-color @duration ease-in, color @duration ease-in;);
+  }
+
+  &__strapline-btn.is-visited,
+  &__strapline-btn.is-visited &__strapline-icon {
+    background-color: @visited;
+    color: @visited-inverted;
+  }
+
+  &.has-img-zoom &__slider-image-container {
+    .img-zoom();
+  }
+}

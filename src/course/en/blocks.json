@@ -1,0 +1,22 @@
+[
+  {
+    "title": "New Block Title",
+    "displayTitle": "",
+    "body": "",
+    "_classes": "",
+    "_trackingId": 1,
+    "instruction": "",
+    "_isOptional": false,
+    "_isAvailable": true,
+    "_isHidden": false,
+    "_isVisible": true,
+    "_requireCompletionOf": -1,
+    "_ariaLevel": 0,
+    "_id": "646b7c33b38aaf6b93dd8e3f",
+    "_parentId": "646b7aa9b38aaf6b93dd8e3b",
+    "_type": "block",
+    "_assessment": {
+      "_quizBankID": 1
+    }
+  }
+]
