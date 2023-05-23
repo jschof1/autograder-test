@@ -16,7 +16,6 @@ export default class fileInputView extends QuestionView {
     };
   }
 
-
   resetQuestionOnRevisit() {
     this.resetQuestion();
   }
@@ -417,51 +416,39 @@ export default class fileInputView extends QuestionView {
     let combinedArr = ajv.concat(csv)
 
     console.log(combinedArr)
+    
 
-    this.model.get('_items')[0].feedback = combinedArr
-    this.model.get('_feedback').correct = combinedArr
-    this.model.get('_feedback')._incorrect.final = combinedArr
-    this.model.get('_feedback')._partlyCorrect.final = combinedArr
-    combinedArr.map(() => {
+    let combinedString = combinedArr.join('<br>');
 
-    })
+    this.model.get('_items')[0].feedback = combinedString;
+    this.model.get('_feedback').correct = combinedString;
+    this.model.get('_feedback')._incorrect.final = combinedString;
+    this.model.get('_feedback')._partlyCorrect.final = combinedString;
+    
     return $('#feedback').html(`<ul> ${combinedArr.map((result) => {
-      return `<li>${result}</li>`
+      return `<li>${result}</li>`;
     }).join('')} </ul>`);
   }
 
-  // async removeButton() {
-  //   const tableContents = $("#example-wrapper")
-  //   const $itemInput = this.$('.js-item-input').eq(0)
-  //   // console.log($itemInput)
-  //   /* create button that removes uploaded file so that the user can reupload */
-  //   var clearUploadButton = document.createElement('button');
-  //   clearUploadButton.innerHTML = 'Clear Upload';
-  //   clearUploadButton.onclick = function() {
-  //     $itemInput.val('');
-  //     tableContents.html('');
-  //     $itemInput.trigger('change');
-
-  //   };
-  //   document.body.appendChild(clearUploadButton);
-  //   }
-
   async onInputChanged(e) {
-
-
     const index = $(e.currentTarget).data('adapt-index');
     const itemModel = this.model.getItem(index);
     let shouldSelect = !itemModel.get('_isActive');
-
-
+  
     shouldSelect = true;
     this.model.resetActiveItems();
-
+  
     // Select or deselect accordingly
     itemModel.toggleActive(shouldSelect);
-    // this.removeButton()
-    this.createTable()
-    this.feedback()
+  
+    // Check if a submission is allowed
+    const canSubmit = this.model.canSubmit();
+    if (!canSubmit) {
+      console.log('Submission not allowed.');
+      return;  // Exit the function if submission is not allowed
+    }
+    // Continue with your function if submission is allowed
+    this.createTable();
+    this.feedback();
   }
 }
-
