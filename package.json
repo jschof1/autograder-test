@@ -57,6 +57,7 @@
         "nsdeclare": "^0.1.0",
         "rollup": "^2.60.0",
         "time-grunt": "^2.0.0",
+        "uglify-js": "^3.17.4",
         "underscore": "^1.13.1",
         "underscore-deep-extend": "^1.1.5"
     },
