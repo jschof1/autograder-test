@@ -1,0 +1,41 @@
+.article {
+  position: relative;
+}
+
+.trickle {
+  &__inner {
+    z-index: 80;
+  }
+
+  &__btn {
+    position: relative;
+    display: block;
+    margin: auto;
+  }
+
+  &.is-full-width &__btn {
+    width: 100%;
+  }
+
+  &__btn-icon .icon {
+    .icon-controls-small-down;
+  }
+
+  // Adds the necessary styling to lock the button
+  // --------------------------------------------------
+  &.is-locked {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  // If full width config is enabled, button is fixed to the bottm of the screen
+  // --------------------------------------------------
+  &.is-full-width &__inner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
